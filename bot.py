@@ -212,7 +212,7 @@ def get_attendance_date(now=None):
     """考勤日期：07:00 为分界点，所有00:00-06:59的记录都算前一天"""
     if now is None:
         now = beijing_now()
-    if now.hour < 2:   # 00:00-06:59 算前一天
+    if now.hour < 7:   # 00:00-06:59 算前一天
         return beijing_date_str(now - timedelta(days=1))
     return beijing_date_str(now)
 
